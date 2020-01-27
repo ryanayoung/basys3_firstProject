@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 01/26/2020 06:50:53 PM
+-- Create Date: 01/26/2020 07:53:39 PM
 -- Design Name: 
--- Module Name: led_to_bcd - Behavioral
+-- Module Name: btn_debounce - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,13 +31,26 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity led_to_bcd is
---  Port ( );
-end led_to_bcd;
+entity btn_debounce is
+    Port ( 
+            clk :   in std_logic;
+            btn_in : in STD_LOGIC;
+            btn_out : out STD_LOGIC);
+end btn_debounce;
 
-architecture Behavioral of led_to_bcd is
+architecture Behavioral of btn_debounce is
+signal sh1, sh2, sh3: std_logic;
 
 begin
+btn_debounce: process(clk)
+    begin
+    if rising_edge(clk) then
+        sh1 <= btn_in;
+        sh2 <= sh1;
+        sh3 <= sh2;
+    end if;
+end process;
 
-
+btn_out <= sh1 and sh2 and sh3;
+    
 end Behavioral;

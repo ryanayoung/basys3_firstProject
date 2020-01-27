@@ -1,0 +1,25 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port btnC -pg 1 -y 100 -defaultsOSRD
+preplace port CLK100MHZ -pg 1 -y 20 -defaultsOSRD
+preplace portBus an -pg 1 -y 150 -defaultsOSRD
+preplace portBus seg -pg 1 -y 170 -defaultsOSRD
+preplace inst clock_1Hz_0 -pg 1 -lvl 2 -y 80 -defaultsOSRD
+preplace inst seven_seg_display_0 -pg 1 -lvl 4 -y 160 -defaultsOSRD
+preplace inst btn_debounce_0 -pg 1 -lvl 1 -y 90 -defaultsOSRD
+preplace inst counter_0 -pg 1 -lvl 3 -y 90 -defaultsOSRD
+preplace netloc clock_1Hz_0_clk1hz 1 2 1 N
+preplace netloc counter_0_cout 1 3 1 650
+preplace netloc seven_seg_display_0_LED_out 1 4 1 NJ
+preplace netloc seven_seg_display_0_Anode_Activate 1 4 1 NJ
+preplace netloc btnC_1 1 0 1 NJ
+preplace netloc CLK100MHZ_1 1 0 4 20 20 220 160 NJ 160 660
+preplace netloc btn_debounce_0_btn_out 1 1 3 230 10 450 20 670J
+levelinfo -pg 1 0 120 340 550 830 1010 -top 0 -bot 240
+",
+}
+{
+   da_clkrst_cnt: "3",
+}
